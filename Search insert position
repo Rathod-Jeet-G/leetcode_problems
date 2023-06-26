@@ -50,7 +50,8 @@ nums contains distinct values sorted in ascending order.
 
 
 --------------------------------2. CODE/SOLUTION-------------------------------------
-  int index=0;
+ //in this solution space complexity is low compare to above code
+     int index=0;
        
       for(int i=0;i<nums.length;i++){
             if(nums[i]==target){
@@ -62,6 +63,3 @@ nums contains distinct values sorted in ascending order.
       }
        return index;
 
-
-
-    }
