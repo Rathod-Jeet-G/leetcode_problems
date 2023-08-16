@@ -3,8 +3,29 @@ Problem Statement:
 Ideally, the array should contain elements from 1 to ‘N’. 
 But due to some miscalculations, there is a number R in the range [1, N] which appears in the array twice and another number M in the range [1, N] which is missing from the array.
 
+---------best cas solution in python------
+def missingAndRepeating(arr,n):
+    hash = [0]*(n+1)
+    for i in range(n):
+        hash[arr[i]]+=1
 
-------solution in pythone-----------------------
+    rep, miss = -1,-1
+
+    for i in range(1,n+1):
+        if hash[i] == 2:
+            rep=i
+        elif hash[i] == 0:
+            miss = i
+
+        if rep!=-1 and miss!=-1:
+            break
+    return [miss,rep]
+#time complexit O(N)
+#spcae complexit O(N)
+
+
+
+------ optimal solution in python-----------------------
 def missingAndRepeating(arr,n):
     SN = (n*(1+n))//2
     S2N = (n*(n+1)*(2*n+1))//6
