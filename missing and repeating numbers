@@ -1,4 +1,5 @@
-Problem Statement
+#this problem is avilable in coding ninja platform
+Problem Statement:
 Ideally, the array should contain elements from 1 to ‘N’. 
 But due to some miscalculations, there is a number R in the range [1, N] which appears in the array twice and another number M in the range [1, N] which is missing from the array.
 
