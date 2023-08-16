@@ -1,0 +1,28 @@
+Problem Statement
+Ideally, the array should contain elements from 1 to ‘N’. 
+But due to some miscalculations, there is a number R in the range [1, N] which appears in the array twice and another number M in the range [1, N] which is missing from the array.
+
+
+------solution in pythone-----------------------
+def missingAndRepeating(arr,n):
+    SN = (n*(1+n))//2
+    S2N = (n*(n+1)*(2*n+1))//6
+
+    s,s2 = 0,0
+
+    for i in range(n):
+        s +=arr[i]
+        s2 +=arr[i]*arr[i]
+    # if val1 == 0:
+    #     return None
+    val1 = s-SN
+    val2 = s2-S2N
+    val2 = val2//val1
+    x = (val1+val2)//2
+    y = x-val1
+    
+    return [y,x]
+
+   # timecomplexity is O(N)
+   # spcae complexity us O(1)
+    
