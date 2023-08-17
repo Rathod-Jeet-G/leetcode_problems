@@ -1,0 +1,38 @@
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+
+Example 3:
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+ 
+
+Constraints:
+1 <= nums.length <= 105
+-109 <= nums[i] <= 109
+
+
+------------------Solution in Python-----------------------------------------------------------------------------------
+#time complexity is O(n)
+#space complexity is O(n)
+ def containsDuplicate(self, nums: List[int]) -> bool:
+        hashset = set()
+        for i in nums:
+            if  i in hashset:
+                return True
+            else:
+                hashset.add(i)
+        return False
+
+
+
+----------solution description-------------------------------
+# here i am using hashset which contain only unique value only, in this allways check the ith value is present in hashset or not if i^th value is not present then simply enter those value in hashset
+if the the i^th value is present in the hashset then it stop the iterating and return True means the duplicate value is present inside the array/list
+if whole iteration is finished no such element find which are repeated in array/list then simply return false which indicate the duplicate element inside the array/list
