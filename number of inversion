@@ -1,0 +1,44 @@
+# this problem is avialable in coding ninja
+
+Problem Statement
+https://www.codingninjas.com/studio/problems/number-of-inversions_6840276?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_Arrayproblems&leftPanelTab=0
+
+
+--------------------------solution in python-----------------------------------------------------
+count = 0
+def numberOfInversions(a : List[int], n : int) -> int:
+    
+    def merge(a,low,mid,high):
+        global count
+        temp = []
+        left = low
+        right = mid+1
+        i=low
+        while (left<=mid and right<=high):
+            if a[left]<=a[right]:
+                temp.append(a[left])
+                left+=1
+            else:
+                temp.append(a[right])
+                count+=(mid-left+1)
+                right+=1
+        while(left<=mid):
+            temp.append(a[left])
+            left+=1
+        while(right<=high):
+            temp.append(a[right])
+            right+=1
+        while(i<=high):
+            a[i] = temp[i-low]
+            i+=1
+    
+    def mergsort(a,low,high):
+        if low>=high:
+            return 
+        mid = (low+high)//2    
+        mergsort(a,low,mid)
+        mergsort(a,mid+1,high)
+        merge(a,low,mid,high)
+    
+    mergsort(a,0,n-1)
+    return count
