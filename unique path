@@ -1,0 +1,39 @@
+There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
+
+Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
+
+The test cases are generated so that the answer will be less than or equal to 2 * 109.
+
+
+
+solution in python
+-------------------------------------using recurion + dp----------------------------------------------------------------------------------
+ def countpath(self, i: int, j: int, n: int, m: int, dp: List[List[int]]) -> int:
+            if i==(m-1) and j==(n-1): 
+                return 1
+            if i>=m or j>=n:
+                return 0
+            if dp[i][j]!=-1:
+                return dp[i][j]
+            else:
+               dp[i][j] = self.countpath(i + 1, j, n, m, dp) + self.countpath(i, j + 1, n, m, dp)
+               return dp[i][j]
+    def uniquePaths(self, m: int, n: int) -> int:
+        dp = [[-1 for _ in range(m+1)] for _ in range(n+1)]
+        num = self.countpath(0,0,m,n,dp)
+        if m==1 and n==1:
+            return num
+        return dp[0][0]
+
+
+--------------------------------------using recursion-------------------------------------------------------------------------------------------
+        #using recursion method 
+        # in this solution all test case is not solverd it gives time limit error for m=23 and n=12
+        def countpath(i,j,m,n):
+            if i==(m-1) and j==(n-1): 
+                return 1
+            if i>=m or j>=n:
+                return 0
+            else:
+                return countpath(i+1,j,m,n) + countpath(i,j+1,m,n)
+        return countpath(0,0,m,n)
