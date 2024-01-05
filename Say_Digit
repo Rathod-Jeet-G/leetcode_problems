@@ -1,0 +1,22 @@
+//problem statement:
+
+# whaterver number of digit you enter the function will return those sequence number in digit in same sequence
+
+def saydigit(n,arr):
+    if n == 0:
+        return
+    digit = n%10
+    n = n//10
+
+    saydigit(n,arr)
+
+    print(arr[digit],end=" ")
+
+arr = ['Zero','One','Two','Three','Four','Five','six','seven','eight','nine']
+n = int(input())
+print(saydigit(n,arr))
+
+# output
+// for example input number is 729
+// the output will be Seven Two Nine
+
