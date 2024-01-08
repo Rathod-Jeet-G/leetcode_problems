@@ -1,0 +1,34 @@
+------------------------------------------------solution-------------------------------------------------------------------------------
+def arange_element(arr,n):
+    positive = []
+    negative = []
+    for i in range(n):
+        if arr[i] >= 0:
+            positive.append(arr[i])
+        else:
+            negative.append(arr[i])
+    np = len(positive)
+    nn = len(negative)
+    # print(nn)
+    j = 0 
+    p = 0
+    arr1 = []
+    status=0
+    while(j<np or p<nn):
+        if status==0:
+            arr1.append(positive[j])
+            j+=1
+            status=1
+        else:
+            arr1.append(negative[p])
+            p+=1
+            status=0
+    return arr1
+
+    # print(np)
+    # print(positive)
+    # print(negative)
+    # return arr1
+arr = [3,1,-2,-5,2,-4]  
+n = len(arr)
+print(arange_element(arr,n))
