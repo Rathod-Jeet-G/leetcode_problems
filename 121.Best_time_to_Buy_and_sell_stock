@@ -17,7 +17,22 @@ Input: prices = [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 
----------------solution in python ----------------------------
+
+---------------------------------------------------------------------------optimal solution in python-----------------------------------------------------
+def maxProfit(self, prices: List[int]) -> int:
+        mini_profit = float('inf')
+        max_profit = 0
+        for i in range(len(prices)):
+            if prices[i]<mini_profit:
+                mini_profit = prices[i]
+            else:
+                max_profit = max(max_profit,prices[i]-mini_profit)
+        return max_profit
+
+# time complexity is O(n)
+# space complexity is O(1)
+
+-------------------------------------------------------------------------solution in python brutforce solution-------------------------------------------
         ans = 0
         i=0
         j=1
