@@ -1,3 +1,32 @@
+"""
+----------------------------------companies---------------------------------------------
+the below record of 2023 year and past
+-> 0 - 6 months:
+
+   Amazon 6
+   Adobe 3
+   Apple 2
+   
+-> 6 months - 1 year:
+
+   Bloomberg 7
+   Google 3
+   tcs 3
+   Microsoft 2
+   Uber 2
+   Goldman Sachs 2
+   persistent systems 2
+   
+-> 1 year - 2 years:
+
+   Yahoo 3
+   Oracle 3
+   Snapchat 2
+   Facebook 2
+   Infosys 2
+   Twitter
+"""
+"""
 Given an integer numRows, return the first numRows of Pascal's triangle.
 
 In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
@@ -13,6 +42,8 @@ Output: [[1]]
 Constraints:
 
 1 <= numRows <= 30
+"""
+
 
 -----------------solution in python---------
 def generate(self, numRows: int) -> List[List[int]]:
