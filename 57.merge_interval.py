@@ -1,5 +1,62 @@
-problem statment level is medium
+"""
+-------------------------------------------companies-------------------------------------------------------------
+0 - 6 months:
+    Amazon 9
+    Google 5
+    LinkedIn 4
+    Apple 3
+    Adobe 3
+    Uber 3
+    Yahoo 3
+    Yandex 3
+    TikTok 3
+    Facebook 2
+    Bloomberg 2
+6 months - 1 year:
+    Microsoft 9
+    Cisco 5
+    Palantir Technologies 4
+    eBay 3
+    Salesforce 3
+    Booking.com 3
+    Expedia 3
+    ByteDance 3
+    PayPal 2
+    Pinterest 2
+    Oracle 2
+    VMware 2
+    Coupang 2
+    Atlassian 2
+    JPMorgan 2
+    Shopee 2
+    Cognizant 2
+1 year - 2 years:
+    IBM 18
+    Snapchat 9
+    Walmart Labs 9
+    Twitter 7
+    Reddit 5
+    Nvidia 4
+    Morgan Stanley 4
+    Qualtrics 4
+    Wish 3
+    ServiceNow 3
+    Visa 3
+    Splunk 3
+    Intuit 2
+    Goldman Sachs 2
+    Netflix 2
+    Twilio 2
+    Two Sigma 2
+    BlackRock 2
+    Tesla 2
+    Hotstar 2
+    Citadel 2
+    Arcesium 2
+    Samsung 2
+"""
 
+"""
 Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
  
@@ -20,9 +77,10 @@ Constraints:
 intervals[i].length == 2
 0 <= starti <= endi <= 104
 
+"""
 
----------------solution in python------------------
-worst case solution with time complexity is O(n^2)
+#---------------solution in python------------------
+#worst case solution with time complexity is O(n^2)
     class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:    
         n = len(intervals)
@@ -44,7 +102,7 @@ worst case solution with time complexity is O(n^2)
 
 
 
-optimal solution with time complexity is O(N)
+#optimal solution with time complexity is O(N)
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
          n = len(intervals)
