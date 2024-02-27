@@ -1,1 +1,2 @@
-# leetcode_problems
+# leetcode problem Solution with problem statement
+
